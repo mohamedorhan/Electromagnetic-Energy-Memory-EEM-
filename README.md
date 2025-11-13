@@ -1,128 +1,194 @@
-# Electromagnetic Energy Memory (EEM)
-
-**Electromagnetic Energy Memory (EEM)** is a mathematical and computational framework that demonstrates how energy can be stored as **long-lived electromagnetic memory states** inside purely resonant LC networks—without any chemical reactions.
-
-This repository contains:
-
-- Full Python simulation of the EEM model  
-- High-resolution numerical experiments  
-- Publication-ready figures  
-- The official research paper  
+# ⚡ Electromagnetic Energy Memory (EEM)
+### A Resonant and Network-Based Framework for Non-Chemical Energy Storage  
+**Official Scientific Repository — Research, Simulation Code, and Figures**
 
 ---
 
-## 📄 Official Research Paper
+<p align="center">
+  <b>Author:</b> Mohamed Orhan Zeinel<br>
+  <b>ORCID:</b> <a href="https://orcid.org/0009-0008-1139-8102">0009-0008-1139-8102</a><br>
+  <b>DOI:</b> <a href="https://doi.org/10.5281/zenodo.17597289">10.5281/zenodo.17597289</a><br>
+  <b>Email:</b> mohamedorhanzeinel@gmail.com
+</p>
 
-**DOI:** https://doi.org/10.5281/zenodo.17597289  
-**Author:** Mohamed Orhan Zeinel  
-**ORCID:** https://orcid.org/0009-0008-1139-8102  
-
-PDF is included in the repository.
-
----
-
-## 🔬 Scientific Overview
-
-### What is EEM?
-EEM proposes that energy can be stored not as chemical potential (like batteries), but as **stable spatial patterns** in a network of coupled LC resonators.
-
-A memory state is a localized energy distribution that:
-
-1. Remains confined to a small region of the network  
-2. Persists for long times despite electrical losses  
-
-This creates a new class of **non-chemical energy storage**.
+<p align="center">
+  <a href="Electromagnetic_Energy_Memory__EEM_.pdf">
+    <img src="https://img.shields.io/badge/📄_Open_Paper-PDF-blue?style=for-the-badge">
+  </a>
+  <a href="eem_energy_memory.py">
+    <img src="https://img.shields.io/badge/💻_Open_Code-Python-green?style=for-the-badge">
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.17597289">
+    <img src="https://img.shields.io/badge/DOI-10.5281/zenodo.17597289-orange?style=for-the-badge">
+  </a>
+</p>
 
 ---
 
-## 📁 Repository Structure
+# 📘 Overview
 
+**Electromagnetic Energy Memory (EEM)** introduces a new class of energy storage that does *not* rely on chemical reactions.  
+Instead, energy is stored as **long-lived, localized electromagnetic memory states** inside a network of coupled LC resonators.
 
-├── eem_energy_memory.py        # Main simulation script
-├── Electromagnetic_Energy_Memory__EEM_.pdf   # Full scientific paper
-├── README.md                   # This file
-└── Figures/                    # Simulation output figures (PNG)
+EEM demonstrates that:
+
+- Energy can remain confined in a small region  
+- Localized states persist even with realistic losses  
+- Memory patterns can encode information  
+- Resonant electromagnetic structures act as *non-chemical batteries*
+
+This repository provides the full scientific, computational, and visual foundation of the EEM model.
 
 ---
 
-## 🧠 Mathematical Model (Brief)
+# 📄 Contents
 
-We consider a ring of \(N\) identical RLC cells with coupling capacitance \(C_c\).
+- **📘 Official Research Paper (PDF)**
+- **💻 Full Python Simulation Code**
+- **📊 Figures (Publication-Ready)**
+- **🧮 Mathematical Model**
+- **🧪 Numerical Experiments**
+- **📐 Engineering Analysis**
+- **📦 Repository Structure**
 
-Equations:
+---
+
+# 📄 Official Research Paper
+
+Peer-review-ready research paper:
+
+▶ **[Open the Full Paper (PDF)](Electromagnetic_Energy_Memory__EEM_.pdf)**  
+▶ **DOI:** https://doi.org/10.5281/zenodo.17597289  
+
+---
+
+# 💻 Simulation Code
+
+Complete implementation of the EEM model:
+
+▶ **[eem_energy_memory.py](eem_energy_memory.py)**
+
+Includes:
+
+- RLC lattice generation  
+- Capacitive coupling  
+- Numerical time-integration  
+- Energy evolution tracking  
+- Mode visualization  
+- High-resolution heatmaps  
+
+---
+
+# 🖼 Figures (High Resolution)
+
+Click to view:
+
+- ▶ **[Energy Memory Profile](Figurs/eem_memory_profile.png)**  
+- ▶ **[Total Energy Evolution](Figurs/eem_total_energy.png)**  
+- ▶ **[Energy Localization Map](Figurs/eem_energy_map.png)**  
+
+All figures were generated directly via the included Python simulation.
+
+---
+
+# 🧩 Scientific Background
+
+## 🔬 What is an Electromagnetic Memory State?
+
+A memory state is a stable, localized energy distribution in a resonant LC network.
+
+It satisfies:
+
+1. **Localization** — confined to a small region  
+2. **Persistence** — long-lived under loss  
+3. **Encoding Capacity** — shape/location encode information  
+4. **Non-Chemical Behavior** — no ions or reactions
+
+This creates a new pathway for **safe, long-lived, chemical-free energy storage**.
+
+---
+
+# 📐 Mathematical Model (Core Equations)
+
+The EEM network is a ring of RLC cells with capacitive coupling.
+
+Voltage dynamics of node \( i \):
 
 \[
-\frac{dq_k}{dt} = i_k
+C \frac{d^2 V_i}{dt^2}
++ \frac{1}{R}\frac{dV_i}{dt}
++ \frac{1}{L}V_i
++ C_c\left(
+\frac{d^2}{dt^2}(V_i - V_{i-1})
++ \frac{d^2}{dt^2}(V_i - V_{i+1})
+\right)=0
 \]
 
-\[
-L\frac{di_k}{dt}
-= -Ri_k - \frac{1}{C}q_k - \frac{1}{C_c}(2q_k - q_{k-1} - q_{k+1})
-\]
+Where:
 
-Energy per cell:
+- \( C \) — capacitance  
+- \( L \) — inductance  
+- \( R \) — resistance  
+- \( C_c \) — coupling capacitance  
 
-\[
-E_k(t) = \frac{q_k^2}{2C} + \frac{L i_k^2}{2}
-\]
-
-Localized peaks in \(E_k\) correspond to **energy memory states**.
+Eigenmode analysis shows the emergence of stable localized electromagnetic modes.
 
 ---
 
-## ▶️ Running the Simulation
+# 🧪 Numerical Experiments
 
-### Requirements
+Simulation reveals:
 
-Python 3.9+
-numpy
-scipy
-matplotlib
-### Run
-```bash
-python eem_energy_memory.py
+- Memory-state formation  
+- Exponential energy decay  
+- Spatial confinement  
+- Mode beating and interference  
+- Stability under electrical loss  
 
-The script automatically generates:
-	•	Total energy decay plot
-	•	Space–time energy map
-	•	Memory localization profile
+Figures included in the repository reflect these results.
 
-All plots are saved in the Figures directory.
+---
 
-⸻
+# 📦 Repository Structure
 
-🧪 Configuration Example
+Electromagnetic-Energy-Memory-EEM-/
+│
+├── eem_energy_memory.py                       # Main simulation code
+├── Electromagnetic_Energy_Memory__EEM_.pdf    # Full research paper
+├── README.md                                   # This documentation
+├── LICENSE                                     # MIT license
+│
+└── Figurs/
+├── eem_memory_profile.png
+├── eem_total_energy.png
+└── eem_energy_map.png
 
-from eem_energy_memory import EEMConfig, run_simulation
+---
 
-cfg = EEMConfig(
-    N=16,
-    L=1e-3,
-    C=1e-6,
-    Cc=1e-6,
-    R=1e-3,
-    t_final=0.05,
-    samples=6000,
-    initial_cells=(0,),
-    initial_charge=4e-6,
-)
+# 📚 How to Cite
 
-t, q, i, E, E_tot = run_simulation(cfg)
+Mohamed Orhan Zeinel,
+“Electromagnetic Energy Memory (EEM): A Resonant and Network-Based Framework for Non-Chemical Energy Storage”,
+Zenodo (2025),
+DOI: 10.5281/zenodo.17597289.
 
-📊 Output Examples
-	•	*_total_energy.png – Total stored energy vs time
-	•	*_energy_map.png – Heatmap of energy over space/time
-	•	*_memory_profile.png – Localized memory state detector
+---
 
-⸻
+# 👤 Author
 
-📚 Citation
+**Mohamed Orhan Zeinel**  
+Independent Researcher  
+📧 mohamedorhanzeinel@gmail.com  
+🔗 ORCID: https://orcid.org/0009-0008-1139-8102  
 
-If you use this work, please cite:
+---
 
-Electromagnetic Energy Memory (EEM):
-A Resonant and Network-Based Framework for Non-Chemical Energy Storage
-Mohamed Orhan Zeinel, 2025.
-DOI: 10.5281/zenodo.17597289
+# 🛡 License
 
-GitHub Repository (2025).
+MIT License — free for scientific and commercial use.
+
+---
+
+# ⭐ Support the Project
+
+If this work contributes to your research, please **star ⭐ the repository** to support visibility and future development.
